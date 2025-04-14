@@ -1,0 +1,196 @@
+body {
+  font-family: 'Press Start 2P', monospace;
+  background: linear-gradient(to bottom right, #1a1a1a, #333333); /* Gradient background */
+  color: #e0e0e0; /* Lighter text color */
+  text-align: center;
+  margin: 0;
+  padding: 20px; /* Add padding around the body */
+  min-height: 100vh; /* Ensure body takes full height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  color: #ffd700; /* Gold color for main title */
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px #000;
+}
+
+#gameArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px; /* Limit max width for better layout on large screens */
+}
+
+.dealerHand {
+  margin-bottom: 30px; /* Increased margin */
+  padding: 20px;
+  border: 3px solid #c0392b; /* Stronger red border */
+  border-radius: 15px; /* More rounded corners */
+  background-color: #7f1d1d; /* Darker red background */
+  min-width: 200px; /* Slightly wider */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6); /* More pronounced shadow */
+  position: relative; /* For potential future absolute positioning inside */
+}
+
+.playerHands {
+  display: flex;
+  justify-content: space-around; /* Space out player hands */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.playerHand {
+  margin: 15px; /* Increased margin */
+  padding: 20px;
+  border: 3px solid #2980b9; /* Stronger blue border */
+  border-radius: 15px;
+  background-color: #1f4a75; /* Darker blue background */
+  min-width: 180px; /* Slightly wider */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+  transition: transform 0.2s ease-in-out; /* Add hover effect */
+}
+
+.playerHand:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.dealerHand h2, .playerHand h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.1em; /* Slightly larger headings */
+  color: #f1c40f; /* Yellow color for titles */
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap; /* Allow cards to wrap */
+  justify-content: center; /* Center cards within the hand */
+  min-height: 85px; /* Adjusted min-height to fit new card size */
+  margin-top: 10px;
+  margin-bottom: 10px; /* Add margin below cards */
+}
+
+/* --- MODIFIED CARD STYLE --- */
+.card {
+  width: 55px; /* Slightly wider for better character fit */
+  height: 80px; /* Slightly taller */
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  margin: 4px;
+  background-color: #fff;
+  color: #000; /* Default color, will be overridden by suit */
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  font-size: 38px; /* Significantly larger font for Unicode characters */
+  font-family: 'Segoe UI Symbol', 'Symbola', 'Arial Unicode MS', sans-serif; /* Fonts supporting card symbols */
+  padding: 0; /* Remove previous padding */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+/* --- OLD VALUE/SUIT STYLES REMOVED/COMMENTED OUT --- */
+/*
+.card .value {
+font-weight: bold;
+}
+
+.card .suit {
+font-size: 20px;
+}
+*/
+
+/* Suit colors */
+.card.hearts, .card.diamonds {
+  color: #c0392b; /* Red */
+}
+
+.card.clubs, .card.spades {
+  color: #2c3e50; /* Black */
+}
+
+p {
+  margin-top: 10px;
+  font-size: 0.9em; /* Slightly smaller paragraph text */
+  line-height: 1.4;
+}
+
+span {
+  color: #ffffff; /* White color for values/results */
+  font-weight: bold;
+}
+
+button {
+  margin: 20px 5px 5px 5px; /* More margin top */
+  padding: 12px 25px; /* Larger padding */
+  border: none;
+  border-radius: 8px; /* More rounded */
+  background: linear-gradient(to bottom, #3498db, #2980b9); /* Blue gradient */
+  color: #fff;
+  font-size: 16px; /* Larger font size */
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.1s ease;
+  font-family: 'Press Start 2P', monospace;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+  text-shadow: 1px 1px 2px #000;
+}
+
+button:hover {
+  background: linear-gradient(to bottom, #2980b9, #1f618d); /* Darker blue on hover */
+  transform: translateY(-2px); /* Lift effect */
+}
+
+button:active {
+  transform: translateY(1px); /* Press effect */
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.4);
+}
+
+#results {
+  margin-top: 25px;
+  font-size: 1.1em; /* Larger results text */
+  color: #2ecc71; /* Green color for results */
+  min-height: 30px; /* Ensure space for results */
+  font-weight: bold;
+}
+
+#stats {
+  margin-top: 25px;
+  font-size: 0.9em;
+  color: #bdc3c7; /* Lighter grey for stats */
+  background-color: rgba(0, 0, 0, 0.2); /* Slight background for stats area */
+  padding: 15px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 600px;
+}
+#stats p {
+  margin: 5px 0;
+}
+
+.hidden { /* Style for hidden dealer card */
+  background-color: #555;
+  color: #555; /* Ensure text is hidden */
+  border-color: #444;
+  font-size: 24px; /* Adjust size for the '?' if needed */
+  background-image: repeating-linear-gradient(
+    45deg,
+    #666,
+    #666 5px,
+    #555 5px,
+    #555 10px
+    ); /* Optional: Add a pattern for hidden card */
+  /* Ensure unicode character (if used) is hidden */
+  text-indent: -9999px;
+  line-height: 80px; /* Match card height to center '?' vertically if needed */
+}
+/* Add class for player/dealer status */
+.status-win { color: #2ecc71; } /* Green */
+.status-lose { color: #e74c3c; } /* Red */
+.status-tie { color: #f1c40f; } /* Yellow */
+.status-bust { color: #e74c3c; font-style: italic; } /* Red Italic */
+.status-stand { color: #bdc3c7; } /* Grey */

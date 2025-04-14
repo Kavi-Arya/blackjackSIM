@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>5-Player Blackjack Simulator</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <head>
+     <link rel="stylesheet" href="style.css"> 
+    </head>
+    <body>
+      <h1>Blackjack Basic Strategy Simulator</h1>
+      <div id="gameArea">
+        <div class="dealerHand">
+          <h2>Dealer</h2>
+          <div class="cards" id="dealerCards"></div>
+          <p>Hand Value: <span id="dealerHandValue"></span></p>
+        </div>
+        <div class="playerHands">
+          <div class="playerHand" id="player1Hand">
+            <h2>Player 1</h2>
+            <div class="cards" id="player1Cards"></div>
+            <p>Hand Value: <span id="player1HandValue"></span></p>
+            <p>Result: <span id="player1Result"></span></p>
+          </div>
+          <div class="playerHand" id="player2Hand">
+            <h2>Player 2</h2>
+            <div class="cards" id="player2Cards"></div>
+            <p>Hand Value: <span id="player2HandValue"></span></p>
+            <p>Result: <span id="player2Result"></span></p>
+          </div>
+          <div class="playerHand" id="player3Hand">
+            <h2>Player 3</h2>
+            <div class="cards" id="player3Cards"></div>
+            <p>Hand Value: <span id="player3HandValue"></span></p>
+            <p>Result: <span id="player3Result"></span></p>
+          </div>
+          <div class="playerHand" id="player4Hand">
+            <h2>Player 4</h2>
+            <div class="cards" id="player4Cards"></div>
+            <p>Hand Value: <span id="player4HandValue"></span></p>
+            <p>Result: <span id="player4Result"></span></p>
+          </div>
+          <div class="playerHand" id="player5Hand">
+            <h2>Player 5</h2>
+            <div class="cards" id="player5Cards"></div>
+            <p>Hand Value: <span id="player5HandValue"></span></p>
+            <p>Result: <span id="player5Result"></span></p>
+          </div>
+        </div>
+        <div id="results"></div>
+        <div id="stats">
+          <h3>Game Statistics</h3>
+          <p>Player 1 - Wins: <span id="player1Wins">0</span> Losses: <span id="player1Losses">0</span></p>
+          <p>Player 2 - Wins: <span id="player2Wins">0</span> Losses: <span id="player2Losses">0</span></p>
+          <p>Player 3 - Wins: <span id="player3Wins">0</span> Losses: <span id="player3Losses">0</span></p>
+          <p>Player 4 - Wins: <span id="player4Wins">0</span> Losses: <span id="player4Losses">0</span></p>
+          <p>Player 5 - Wins: <span id="player5Wins">0</span> Losses: <span id="player5Losses">0</span></p>
+          <p>Dealer - Wins: <span id="dealerWins">0</span> Losses: <span id="dealerLosses">0</span></p>
+        </div>
+        <button id="playAgain">Play Again</button>
+      </div>
+
+      <script src="main.js"></script>
+    </body>
+</html>
